@@ -18,7 +18,7 @@ class Order:
         self.__total_price = total_price
         self.__status = status
     
-    # --- Getters ---
+    # Getters
     def get_order_id(self):
         return self.__order_id
     
@@ -34,7 +34,7 @@ class Order:
     def get_status(self):
         return self.__status
     
-    # --- Setters ---
+    # Setters
     def set_items(self, items):
         self.__items = items
     
@@ -44,19 +44,30 @@ class Order:
     def set_status(self, status):
         self.__status = status
     
-    # --- Example Stub Methods ---
     def calculate_total_price(self):
-        """
-        Calculates total_price based on the items in the order.
-        Actual implementation would sum up item prices, etc.
-        """
-        pass
+        pass  # Placeholder
     
     def update_order_status(self, new_status):
+        pass  # Placeholder
+
+    def __str__(self):
         """
-        Updates the status of the order (e.g., from 'Pending' to 'Shipped').
-        Additional logic/checks can be added here.
+        Return a summary of items delivered, including 
+        quantities/prices if that info is stored here.
+        This could match the 'Summary of Items Delivered' table
+        in your sample figure.
         """
-        pass
+        # If your `items` are just strings, you can join them.
+        # If you have a separate Item class, you might loop and
+        # format each item code, description, quantity, etc.
+        items_str = "\n".join(self.__items)
+
+        return (
+            f"Order ID: {self.__order_id}\n"
+            f"Status: {self.__status}\n"
+            f"Total Price: AED {self.__total_price}\n"
+            "Items:\n"
+            f"{items_str}"
+        )
 
 
