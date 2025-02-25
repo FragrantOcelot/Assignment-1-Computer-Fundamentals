@@ -45,10 +45,39 @@ class Order:
         self.__status = status
     
     def calculate_total_price(self):
-        pass  # Placeholder
-    
+        """
+        Calculates the total price of the order.
+
+        This function should iterate through the list of items in the order,
+        multiply the unit price by the quantity for each item, and sum up the 
+        total amount.
+
+        Possible implementation steps:
+        1. Loop through all items in the order.
+        2. Multiply each item's quantity by its unit price.
+        3. Sum up the values to compute the total order price.
+        4. Update the total_price attribute with the calculated value.
+        """
+        pass  # Function implementation goes here
+
+
     def update_order_status(self, new_status):
-        pass  # Placeholder
+        """
+        Updates the status of the order.
+
+        This function should modify the order status based on its progress 
+        (e.g., "Pending" → "Shipped" → "Delivered"). It may also include 
+        checks to prevent invalid status changes.
+
+        Possible implementation steps:
+        1. Validate that the new status is a recognized status (e.g., "Pending", 
+        "Processing", "Shipped", "Delivered").
+        2. Ensure that the status transition is logical (e.g., an order should 
+        not move directly from "Pending" to "Delivered").
+        3. Update the status attribute with the new value if valid.
+        """
+        pass  # Function implementation goes here
+
 
     def __str__(self):
         """
