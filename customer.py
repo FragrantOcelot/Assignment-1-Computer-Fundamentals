@@ -2,13 +2,6 @@
 class Customer:
     """
     Represents a customer in the delivery management system.
-    
-    Attributes:
-        __customer_id (str): Unique identifier for the customer.
-        __name (str): The customer's full name.
-        __address (str): Residential or shipping address.
-        __email (str): Email address used for notifications.
-        __phone (str): Contact phone number.
     """
     
     def __init__(self, customer_id, name, address, email, phone):
@@ -18,7 +11,7 @@ class Customer:
         self.__email = email
         self.__phone = phone
 
-    # --- Getters ---
+    # Getters
     def get_customer_id(self):
         return self.__customer_id
     
@@ -34,7 +27,7 @@ class Customer:
     def get_phone(self):
         return self.__phone
     
-    # --- Setters ---
+    # Setters
     def set_name(self, name):
         self.__name = name
     
@@ -47,11 +40,32 @@ class Customer:
     def set_phone(self, phone):
         self.__phone = phone
     
-    # --- Example Stub Methods ---
+    
     def validate_contact_details(self):
         """
-        Checks if the customer's email and phone number formats
-        are valid. Currently just a placeholder.
+        Validates the customer's contact details.
+
+        This function should check if the email address is in a valid format
+        (e.g., contains '@' and a domain name) and if the phone number 
+        consists only of digits with an appropriate length. 
+
+        Possible implementation steps:
+        1. Ensure the email contains an '@' symbol and a valid domain.
+        2. Ensure the phone number is numeric and meets length requirements.
+        3. Return True if both validations pass, otherwise return False.
         """
-        pass
+        pass  
+
+
+    def __str__(self):
+        """
+        Return recipient (customer) details in a user-friendly format.
+        For example, matching the top box in the sample figure
+        under 'Recipient Details'.
+        """
+        return (
+            f"Name: {self.__name}\n"
+            f"Contact: {self.__email}\n"
+            f"Delivery Address: {self.__address}"
+        )
 
