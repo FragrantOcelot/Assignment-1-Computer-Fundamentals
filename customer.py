@@ -2,6 +2,14 @@
 class Customer:
     """
     Represents a customer in the delivery management system.
+    
+    Attributes:
+        __customer_id (str): Unique identifier for the customer.
+        __name (str): The customer's full name.
+        __address (str): Residential or shipping address.
+        __email (str): Email address used for notifications.
+        __phone (str): Contact phone number.
+
     """
     
     def __init__(self, customer_id, name, address, email, phone):
@@ -40,7 +48,7 @@ class Customer:
     def set_phone(self, phone):
         self.__phone = phone
     
-    
+
     def validate_contact_details(self):
         """
         Validates the customer's contact details.
