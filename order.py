@@ -11,12 +11,13 @@ class Order:
         __status (str): Current status of the order (e.g., 'Pending', 'Shipped', 'Delivered').
     """
     
-    def __init__(self, order_id, customer, items, total_price, status):
+    def __init__(self, order_id, customer, items, total_price, status='OK', total_weight=0.0):
         self.__order_id = order_id
         self.__customer = customer
         self.__items = items
         self.__total_price = total_price
         self.__status = status
+        self.__total_weight = total_weight
     
     # Getters
     def get_order_id(self):
@@ -34,6 +35,9 @@ class Order:
     def get_status(self):
         return self.__status
     
+    def get_total_weight(self):
+        return self.__total_weight
+    
     # Setters
     def set_items(self, items):
         self.__items = items
@@ -43,6 +47,9 @@ class Order:
     
     def set_status(self, status):
         self.__status = status
+
+    def set_total_weight(self, weight):
+        self.__total_weight = weight
     
     def calculate_total_price(self):
         """
