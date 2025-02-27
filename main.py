@@ -4,8 +4,6 @@ from order import Order
 from delivery_driver import DeliveryDriver
 from delivery_note import DeliveryNote
 
-# main.py
-
 def main():
     # Create a Customer
     cust = Customer(
@@ -17,14 +15,17 @@ def main():
     )
 
     # Create an Order
+    order_items = {
+        "ITM001": {"description": "Wireless Keyboard", "quantity": 1, "unit_price": 100.00},
+        "ITM002": {"description": "Wireless Mouse & Pad Set", "quantity": 1, "unit_price": 75.00},
+        "ITM003": {"description": "Laptop Cooling Pad", "quantity": 1, "unit_price": 120.00},
+        "ITM004": {"description": "Camera Lock", "quantity": 3, "unit_price": 15.00}
+    }
+
     order = Order(
         order_id="DEL123456789",
         customer=cust,
-        items=["ITM001: Wireless Keyboard (1 x 100.00 AED)",
-               "ITM002: Mouse & Pad (1 x 75.00 AED)",
-               "ITM003: Laptop Cooling Pad (1 x 120.00 AED)",
-               "ITM004: Camera Lock (3 x 15.00 AED)"],
-        total_price=283.50,
+        items=order_items,
         status="Delivered",
         total_weight=7,
         package_dimensions="30x20x10 cm"
@@ -50,6 +51,7 @@ def main():
 
     # Print the delivery note
     print(note)
+    print(order)
 
 if __name__ == "__main__":
     main()
