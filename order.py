@@ -102,5 +102,5 @@ class Order:
             f"{'-'*80}\n"
             f"Subtotal: AED {self.calculate_subtotal():.2f}\n"
             f"Taxes and Fees: AED {self.calculate_taxes_and_fees():.2f}\n"
-            f"Total Charges: AED {self.calculate_total_price():.2f}"
+            f"Total Charges: AED {self.calculate_total_price():.2f}\n"
         )

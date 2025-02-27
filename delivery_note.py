@@ -66,13 +66,7 @@ class DeliveryNote:
             f"Reference Number: {self.__note_id}\n"
             f"Delivery Date: {self.__delivery_date}\n"
             f"Delivery Method: {self.__driver.get_delivery_method()}\n"       # Hard-coded example
-            f"Package Dimensions: \n"          # Hard-coded example
-            f"Total Weight: {self.__order.get_total_weight()}\n\n"              # Hard-coded example
-
-            "Summary of Items Delivered:\n"
-            f"{self.__order}\n"
+            f"Package Dimensions: {self.__order.get_package_dimensions()} \n"          # Hard-coded example
+            f"Total Weight: {self.__order.get_total_weight()} kg \n\n"              # Hard-coded example
             
-            # You can optionally add lines for Subtotal, Taxes, etc.
-            # if you store or calculate them in the Order class or elsewhere.
-            f"Recipient Signature: {self.__recipient_signature}"
         )
