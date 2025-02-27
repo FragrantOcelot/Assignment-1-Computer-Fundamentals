@@ -9,17 +9,20 @@ class Order:
         __items (list): A list of items (strings, or potentially an Item class).
         __total_price (float): Calculated total price.
         __status (str): Current status of the order (e.g., 'Pending', 'Shipped', 'Delivered').
+        __total_weight (float): Total weight of the package in kilograms.
+        __package_dimensions (str): Package dimensions in the format "LxWxH cm".
     """
     
-    def __init__(self, order_id, customer, items, total_price, status='OK', total_weight=0.0):
+    def __init__(self, order_id, customer, items, total_price, status='OK', total_weight=0.0, package_dimensions="30x20x10 cm"):
         self.__order_id = order_id
         self.__customer = customer
         self.__items = items
         self.__total_price = total_price
         self.__status = status
         self.__total_weight = total_weight
-    
-    # Getters
+        self.__package_dimensions = package_dimensions  # NEW ATTRIBUTE
+
+    # --- Getters ---
     def get_order_id(self):
         return self.__order_id
     
@@ -37,8 +40,11 @@ class Order:
     
     def get_total_weight(self):
         return self.__total_weight
+
+    def get_package_dimensions(self):  # NEW GETTER
+        return self.__package_dimensions
     
-    # Setters
+    # --- Setters ---
     def set_items(self, items):
         self.__items = items
     
@@ -50,7 +56,11 @@ class Order:
 
     def set_total_weight(self, weight):
         self.__total_weight = weight
+
+    def set_package_dimensions(self, dimensions):  # NEW SETTER
+        self.__package_dimensions = dimensions
     
+    # --- Example Stub Methods ---
     def calculate_total_price(self):
         """
         Calculates the total price of the order.
@@ -66,7 +76,6 @@ class Order:
         4. Update the total_price attribute with the calculated value.
         """
         pass  # Function implementation goes here
-
 
     def update_order_status(self, new_status):
         """
@@ -85,7 +94,6 @@ class Order:
         """
         pass  # Function implementation goes here
 
-
     def __str__(self):
         """
         Return a summary of items delivered, including 
@@ -93,17 +101,14 @@ class Order:
         This could match the 'Summary of Items Delivered' table
         in your sample figure.
         """
-        # If your `items` are just strings, you can join them.
-        # If you have a separate Item class, you might loop and
-        # format each item code, description, quantity, etc.
         items_str = "\n".join(self.__items)
 
         return (
             f"Order ID: {self.__order_id}\n"
             f"Status: {self.__status}\n"
             f"Total Price: AED {self.__total_price}\n"
+            f"Total Weight: {self.__total_weight} kg\n"
+            f"Package Dimensions: {self.__package_dimensions}\n"
             "Items:\n"
             f"{items_str}"
         )
-
-
