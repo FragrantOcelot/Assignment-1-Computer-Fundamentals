@@ -65,7 +65,7 @@ class DeliveryNote:
             f"Order Number: {self.__order.get_order_id()}\n"
             f"Reference Number: {self.__note_id}\n"
             f"Delivery Date: {self.__delivery_date}\n"
-            f"Delivery Method: Courier\n"       # Hard-coded example
+            f"Delivery Method: {self.__driver.get_delivery_method()}\n"       # Hard-coded example
             f"Package Dimensions: \n"          # Hard-coded example
             f"Total Weight: {self.__order.get_total_weight()}\n\n"              # Hard-coded example
 

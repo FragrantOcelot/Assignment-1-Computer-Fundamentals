@@ -8,14 +8,16 @@ class DeliveryDriver:
         __name (str): Driver's full name.
         __vehicle_type (str): Type of vehicle (car, bike, van, etc.).
         __license_number (str): Driving license number.
+        __delivery_method (str): Type of delivery method (e.g., "Courier", "Express", "Standard").
         __assigned_orders (list): List of orders currently assigned to the driver.
     """
     
-    def __init__(self, driver_id, name, vehicle_type, license_number, assigned_orders):
+    def __init__(self, driver_id, name, vehicle_type, license_number, delivery_method, assigned_orders):
         self.__driver_id = driver_id
         self.__name = name
         self.__vehicle_type = vehicle_type
         self.__license_number = license_number
+        self.__delivery_method = delivery_method 
         self.__assigned_orders = assigned_orders
     
     # --- Getters ---
@@ -30,6 +32,9 @@ class DeliveryDriver:
     
     def get_license_number(self):
         return self.__license_number
+
+    def get_delivery_method(self): 
+        return self.__delivery_method
     
     def get_assigned_orders(self):
         return self.__assigned_orders
@@ -43,6 +48,9 @@ class DeliveryDriver:
     
     def set_license_number(self, license_number):
         self.__license_number = license_number
+
+    def set_delivery_method(self, delivery_method): 
+        self.__delivery_method = delivery_method
     
     def set_assigned_orders(self, orders):
         self.__assigned_orders = orders
@@ -60,4 +68,11 @@ class DeliveryDriver:
         Would connect to a GPS or tracking module to update the driver's location.
         """
         pass
-
+    
+    def __str__(self):
+        """
+        Returns a string representation of the driver, including their delivery method.
+        """
+        return (
+            f"Driver: {self.__name} | Vehicle: {self.__vehicle_type} | Delivery Method: {self.__delivery_method}"
+        )
